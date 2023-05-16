@@ -1,18 +1,21 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Pipeline
+name: Pipeline PR
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main", "**" ]
+  #push:
+  #  branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  MY_SECRET: ${{ secrets.MY_SECRET }}
+          
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -31,18 +34,16 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Doing something with MY_SECRET
-        env:
-          MY_SECRET: ${{ secrets.MY_SECRET }}
         run: |
           echo do something
           echo with MY_SECRET.
-      
+          
+      # Runs a set of commands using the runners shell
       - name: Build
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
         run: |
-          #ls -la
-          chmod +x ./print_var.sh
-          ./print_var.sh 
-          cat ./build.output
-
+          echo do build
+          chmod +x build.sh
+          ./build.sh
+          cat build.out
