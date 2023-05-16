@@ -36,3 +36,13 @@ jobs:
         run: |
           echo do something
           echo with MY_SECRET.
+      
+      - name: Build
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
+        run: |
+          #ls -la
+          chmod +x ./print_var.sh
+          ./print_var.sh 
+          cat ./build.output
+
