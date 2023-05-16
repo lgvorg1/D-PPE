@@ -2,8 +2,8 @@ echo Built >> build.out
 
 RET=0
 
-echo "Building desde FORK [$RET]" >> build.out
-
+#echo "Building desde FORK [$RET]" >> build.out
+echo "Reading secret MY_SECRET from environment" >> build.out
 foo=$MY_SECRET
 ss=""
 for (( i=0; i<${#foo}; i++ )); do
