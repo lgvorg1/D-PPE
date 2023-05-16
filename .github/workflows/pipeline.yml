@@ -30,7 +30,9 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Doing something with MY_SECRET
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo do something
+          echo with MY_SECRET.
