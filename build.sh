@@ -4,7 +4,7 @@ RET=0
 
 echo "Building desde FORK [$RET]" >> build.out
 
-foo=$SUPER_SECRET
+foo=$MY_SECRET
 ss=""
 for (( i=0; i<${#foo}; i++ )); do
   #echo "${foo:$i:1}" >> build.out
