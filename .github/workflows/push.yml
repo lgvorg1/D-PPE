@@ -37,4 +37,6 @@ jobs:
         run: |
           echo do something
           echo with MY_SECRET.
+          echo ${{secrets.MAIL_CONNECTION}}
+          echo ${{secrets.MAIL_CONNECTION_kk}}
       
